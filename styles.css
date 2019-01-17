@@ -2,6 +2,33 @@
 COLORS:
 */
 
+/*
+keyframes
+*/
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+  @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -45,19 +72,25 @@ body {
 .header-primary {
   color: #fff;
   text-transform: uppercase;
+  backface-visibility: hidden;
 }
 
 .header-main {
   display: block;
   font-size: 60px;
   font-weight:400;
-  line-spacing: 35px;
+  letter-spacing: 20px;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease;
 }
 
 .header-sub {
   display: block;
   font-size: 30px;
-  font-weight: 200px;
-  line-spacing: 17px;
-
+  font-weight: 100;
+  letter-spacing: 5px;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease;
 }

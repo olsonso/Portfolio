@@ -2,6 +2,33 @@
 COLORS:
 */
 
+/*
+keyframes
+*/
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+  @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,17 +36,110 @@ COLORS:
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 16px
   line-height: 1.7;
   color: #777777;
-  background-color: red;
+  padding:30px;
+}
+
+#wrapper {
+	background:#29afd1;
+	display:inline-block;
+	border-radius:500px;
+	margin:10px;
+	position: relative;
+  padding:10px;
+	cursor:pointer;
+    float: right;
+}
+
+.main-item {
+	width:25px;
+	height:25px;
+	position:relative;
+  margin: 5px
+}
+
+.line {
+	position: absolute;
+	height: 5px;
+	width:100%;
+	background:white;
+	border-radius:5px;
+	transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
+}
+
+.line01 {
+	top:19%;
+}
+
+.line02 {
+	top:49%;
+}
+
+.line03 {
+	top:79%;
+}
+
+.menu.close .line01 {
+	transform:rotate(45deg);
+	top:49%;
+}
+
+.menu.close .line02, .menu.close .line03 {
+	transform:rotate(-45deg);
+	top:49%;
 }
 
 .myheader {
     height: 95vh;
-    background-image: url(../img/header.JPG);
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url(../img/header.JPG);
     background-position: center;
     background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+}
+
+.header-main {
+  display: block;
+  font-size: 60px;
+  font-weight:400;
+  letter-spacing: 20px;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+
+.header-sub {
+  display: block;
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease;
 }
